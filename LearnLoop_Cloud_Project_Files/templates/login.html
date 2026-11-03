@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Login | LearnLoop{% endblock %}
+
+{% block content %}
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <h1>Welcome Back!</h1>
+
+        <p>Login to continue your learning journey.</p>
+
+        <form method="POST" action="{{ url_for('login') }}">
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <button type="submit" class="btn">
+                Login
+            </button>
+
+        </form>
+
+        <p class="auth-link">
+            Don't have an account?
+            <a href="{{ url_for('register') }}">Register here</a>
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}
